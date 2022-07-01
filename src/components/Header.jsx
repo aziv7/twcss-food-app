@@ -1,16 +1,19 @@
 import React from 'react';
 import Logo from '../img/logo.png';
 import Avatar from '../img/avatar.png';
+import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 const Header = () => {
   return (
     <div className='fixed w-screen z-50  p-6 px-16  '>
       <div className='hidden md:flex w-full h-full justify-between'>
-        <div className='flex items-center gap-2'>
-          <img src={Logo} alt='logo' className='w-10 object-cover' />
-          <p className='text-headingColor text-xl font-bold'>City</p>
-        </div>
+        <Link to='/'>
+          <div className='flex items-center gap-2'>
+            <img src={Logo} alt='logo' className='w-10 object-cover' />
+            <p className='text-headingColor text-xl font-bold'>City</p>
+          </div>
+        </Link>
         <div className='flex items-center gap-8'>
           <ul className='flex items-center gap-8 '>
             <li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
@@ -32,13 +35,16 @@ const Header = () => {
               3
             </div>{' '}
           </div>
-          <motion.img
-            whileTap={{ scale: 0.6 }}
-            loading='lazy'
-            className='w-10 cursor-pointer min-w-[40px] h-10 min-h-[40px] drop-shadow-xl'
-            src={Avatar}
-            alt='user profile picture'
-          />
+          <div className='relative'>
+            {' '}
+            <motion.img
+              whileTap={{ scale: 0.6 }}
+              loading='lazy'
+              className='w-10 cursor-pointer min-w-[40px] h-10 min-h-[40px] drop-shadow-xl'
+              src={Avatar}
+              alt='user profile picture'
+            />
+          </div>
         </div>
       </div>
       <div className='flex md:hidden w-full h-full '></div>
