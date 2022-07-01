@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../img/logo.png';
 import Avatar from '../img/avatar.png';
 import { FaShoppingCart } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 const Header = () => {
   return (
     <div className='fixed w-screen z-50  p-6 px-16  '>
@@ -25,15 +26,16 @@ const Header = () => {
               Service
             </li>
           </ul>{' '}
-          <div className='relative '>
+          <div className='relative group '>
             <FaShoppingCart className='text-textColor text-3xl cursor-pointer'></FaShoppingCart>
-            <div className='w-5 h-5 rounded-full text-sm bg-cartNumBg  absolute font-semibold  -right-3 -top-2 text-white text-center'>
+            <div className='transition-all duration-300 group-hover:scale-110 w-5 h-5 rounded-full text-sm bg-cartNumBg  absolute font-semibold  -right-3 -top-2 text-white text-center'>
               3
             </div>{' '}
           </div>
-          <img
+          <motion.img
+            whileTap={{ scale: 0.6 }}
             loading='lazy'
-            className='w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl'
+            className='w-10 cursor-pointer min-w-[40px] h-10 min-h-[40px] drop-shadow-xl'
             src={Avatar}
             alt='user profile picture'
           />
