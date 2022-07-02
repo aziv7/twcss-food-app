@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../img/logo.png';
 import Avatar from '../img/avatar.png';
 import { Link } from 'react-router-dom';
+
+import { MdAddShoppingCart } from 'react-icons/md';
+
+import { MdLogout } from 'react-icons/md';
+
 import { FaShoppingCart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 const Header = () => {
+  const [dropdown, setDropdown] = useState(false);
+
   return (
     <div className='fixed w-screen z-50  p-6 px-16  '>
       <div className='hidden md:flex w-full h-full justify-between'>
@@ -38,12 +45,24 @@ const Header = () => {
           <div className='relative'>
             {' '}
             <motion.img
+              onClick={() => setDropdown(!dropdown)}
               whileTap={{ scale: 0.6 }}
               loading='lazy'
-              className='w-10 cursor-pointer min-w-[40px] h-10 min-h-[40px] drop-shadow-xl'
+              className='rounded-full w-10 cursor-pointer min-w-[40px] h-10 min-h-[40px] drop-shadow-xl'
               src={Avatar}
               alt='user profile picture'
             />
+            {dropdown == true && (
+              <div className='w-40 bg-gray-50 shadow-xl rounded-lg absolute flex flex-col px-4 py-2 right-0 top-12'>
+                <p className='px-4 py-2 rounded-lg cursor-pointer gap-3 flex items-center hover:bg-slate-200 transition-all duration-150 ease-in-out text-textColor text-sm '>
+                  <MdAddShoppingCart /> New Item
+                </p>
+
+                <p className='px-4 py-2 rounded-lg cursor-pointer gap-3 flex items-center hover:bg-slate-200 transition-all duration-150 ease-in-out text-textColor text-sm'>
+                  <MdLogout /> Logout
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
