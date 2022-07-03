@@ -52,7 +52,7 @@ const Header = () => {
             <FaShoppingCart className='text-textColor text-3xl cursor-pointer'></FaShoppingCart>
             <div className='transition-all duration-300 group-hover:scale-110 w-5 h-5 rounded-full text-sm bg-cartNumBg  absolute font-semibold  -right-3 -top-2 text-white text-center'>
               3
-            </div>{' '}
+            </div>
           </div>
           <div className='relative' onClick={() => setDropdown(!dropdown)}>
             {' '}
@@ -63,7 +63,7 @@ const Header = () => {
               src={Avatar}
               alt='user profile picture'
             />
-            {dropdown == true && (
+            {dropdown === true && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -86,6 +86,12 @@ const Header = () => {
         </div>
       </div>
       <div className='flex items-center justify-between md:hidden w-full h-full '>
+        <div className='relative group '>
+          <FaShoppingCart className='text-textColor text-3xl cursor-pointer'></FaShoppingCart>
+          <div className='transition-all duration-300 group-hover:scale-110 w-5 h-5 rounded-full text-sm bg-cartNumBg  absolute font-semibold  -right-3 -top-2 text-white text-center'>
+            3
+          </div>
+        </div>
         <Link to='/'>
           <div className='flex items-center gap-2'>
             <img src={Logo} alt='logo' className='w-10 object-cover' />
@@ -101,7 +107,7 @@ const Header = () => {
             src={Avatar}
             alt='user profile picture'
           />
-          {dropdown == true && (
+          {dropdown === true && (
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
