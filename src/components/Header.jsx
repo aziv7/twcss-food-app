@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <div className='fixed w-screen z-50 p-3 px-4  md:p-6 md:px-16  '>
+    <div className='fixed w-screen z-50 p-3 px-4  md:p-6 md:px-16 bg-primary '>
       <div className='hidden md:flex w-full h-full justify-between'>
         <Link to='/'>
           <div className='flex items-center gap-2'>
