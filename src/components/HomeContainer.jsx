@@ -65,12 +65,12 @@ const HomeContainer = () => {
             duration-300 
             ease-in-out 
             hover:shadow-md
-            hover:-translate-x-5
+            hover:-translate-y-5
             flex flex-col items-center justify-center'
               >
                 <img
                   src={plate.imageSrc}
-                  className='w-20 lg:w-40 -mt-10 lg:-mt-20'
+                  className='w-20  lg:w-40 -mt-10 lg:-mt-20'
                   alt={plate.name}
                 />
 
