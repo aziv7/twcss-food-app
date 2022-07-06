@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MdFastfood } from 'react-icons/md';
+import Loader from './Loader';
 const CreateItem = () => {
+  const categories = ['Fast Food', 'Fruit', 'Pizza'];
   return (
     <div className='w-full min-h-screen flex items-center justify-center '>
       <div
@@ -10,7 +12,7 @@ const CreateItem = () => {
       border  
       border-gray-200 p-4
       flex flex-col
-      items-center justify-center'
+      items-center justify-center gap-4'
       >
         <motion.p
           exit={{ opacity: 0 }}
@@ -28,6 +30,33 @@ const CreateItem = () => {
             required
             placeholder='Food Title'
           />
+        </div>
+
+        <div className='w-full'>
+          <select
+            name=''
+            className='outline-none w-full text-base rounded-md cursor-pointer p-2 border-b-2'
+            id=''
+          >
+            <option value='other' className='p-2 bg-white'>
+              Select Category
+            </option>
+            {categories.map((c) => (
+              <option
+                value={c}
+                className='bg-white p-2 text-base border-0 outline-none caret-pink-50 text-headingColor'
+              >
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div
+          className='group flex justify-center items-center
+        flex-col border-2 border-dashed border-gray-600 w-full
+        h-255 md:h-420 cursor-pointer rounded-lg'
+        >
+          <Loader />
         </div>
       </div>
     </div>
