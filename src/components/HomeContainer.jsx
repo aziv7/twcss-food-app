@@ -3,7 +3,6 @@ import HeroBg from '../img/heroBg.png';
 
 import Delivery from '../img/delivery.png';
 
-import I1 from '../img/i1.png';
 import { data } from '../data';
 
 const HomeContainer = () => {
@@ -53,19 +52,19 @@ const HomeContainer = () => {
           />
           <div
             className='w-full gap-2
-            flex-wrap h-full absolute flex items-center justify-center px-32 py-4 '
+          flex flex-wrap h-full absolute overflow-y-hidden  items-center justify-center px-32 py-4 '
           >
             {data?.map((plate) => (
               <div
                 key={plate.name}
-                className='w-190 min-w-[190px] p-4 ring-1 ring-gray-300 bg-cardColor backdrop-blur-md 
+                className=' w-190 min-w-[190px] p-4 ring-1 ring-gray-300 bg-cardColor backdrop-blur-md 
             rounded-3xl transition-all 
             transform 
             
             duration-300 
             ease-in-out 
             hover:shadow-md
-            hover:-translate-y-5
+            hover:-translate-y-7
             flex flex-col items-center justify-center'
               >
                 <img
