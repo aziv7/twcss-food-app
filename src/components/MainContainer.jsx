@@ -5,6 +5,7 @@ import HomeContainer from './HomeContainer';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 import RowContainer from './RowContainer';
+import CategoriesContainer from './CategoriesContainer';
 
 const MainContainer = () => {
   const [scroll, setScroll] = useState(0);
@@ -46,6 +47,7 @@ duration-150
         </div>
         <RowContainer scroll={scroll} />
       </section>
+      <CategoriesContainer />
     </div>
   );
 };
