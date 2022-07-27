@@ -5,3 +5,5 @@ export { default as HomeContainer } from './HomeContainer';
 export { default as RowContainer } from './RowContainer';
 
 export { default as CategoriesContainer } from './CategoriesContainer';
+
+export { default as Cart } from './Cart';
